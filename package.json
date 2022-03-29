@@ -1,0 +1,19 @@
+{
+  "name": "adopse",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "packages/api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexGatzos/ADOPSE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexGatzos/ADOPSE/issues"
+  },
+  "homepage": "https://github.com/AlexGatzos/ADOPSE#readme"
+}

@@ -11,19 +11,21 @@ model User {
     id         Int      @id @default(autoincrement())
     email      String   @unique
     name       String?
+    password   String
     role       UserRole @relation(fields: [userRoleId], references: [id])
     userRoleId Int
 }
 
 model UserRole {
-    id   Int    @id @default(autoincrement())
+    id    Int    @id @default(autoincrement())
+    // student | teacher | admin
     name String
     users User[]
 }
 
 model Question {
     id   Int    @id @default(autoincrement())
-    body String
+    body String    
 }
 
 model Cource {

@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "db:migrate:dev": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "dev": "esr src/index.ts",
+    "build": "esbuild src/index.ts --bundle --platform=node --format=cjs --target=16 --outdir=dist"
+  },
+  "dependencies": {
+    "@prisma/client": "3.11.0",
+    "fastify": "3.27.4",
+    "fastify-formbody": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "16.11.26",
+    "esbuild": "^0.14.27",
+    "esbuild-runner": "^2.2.1",
+    "prisma": "3.11.0",
+    "typescript": "4.6.2"
+  },
+  "prisma": {
+    "seed": "esr prisma/seed.ts"
+  }
+}
