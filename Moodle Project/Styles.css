@@ -12,7 +12,7 @@ body{
     width: 960px;
 }
 
-input[type=email], input[type=password] {
+input[type=email], input[type=password], input[type=name], input[type=id] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
