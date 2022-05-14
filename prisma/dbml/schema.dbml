@@ -1,0 +1,77 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table User {
+  id Int [pk, increment]
+  email String [unique, not null]
+  name String
+  password String [not null]
+  tests Test [not null]
+  questions Question [not null]
+  Exam Exam [not null]
+}
+
+Table Question {
+  id Int [pk, increment]
+  body String [not null]
+  cource Cource [not null]
+  courceid Int [not null]
+  user User [not null]
+  answers Answer [not null]
+  userId Int [not null]
+  Test Test
+  testId Int
+}
+
+Table Answer {
+  id Int [pk, increment]
+  body String [not null]
+  isCorrect Boolean [not null]
+  Question Question
+  questionId Int
+}
+
+Table Cource {
+  id Int [pk, increment]
+  name String [not null]
+  questions Question [not null]
+  Test Test [not null]
+}
+
+Table Exam {
+  id Int [pk, increment]
+  test Test [not null]
+  user User [not null]
+  userid Int [not null]
+  testId Int [not null]
+  score Int [not null]
+  status String [not null]
+}
+
+Table Test {
+  id Int [pk, increment]
+  title String [not null]
+  user User [not null]
+  userId Int [not null]
+  questions Question [not null]
+  course Cource [not null]
+  courceId Int [not null]
+  Exam Exam [not null]
+}
+
+Ref: Question.courceid > Cource.id
+
+Ref: Question.userId > User.id
+
+Ref: Question.testId > Test.id
+
+Ref: Answer.questionId > Question.id
+
+Ref: Exam.testId > Test.id
+
+Ref: Exam.userid > User.id
+
+Ref: Test.userId > User.id
+
+Ref: Test.courceId > Cource.id
