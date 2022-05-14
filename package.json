@@ -5,14 +5,17 @@
   "license": "",
   "sideEffects": false,
   "scripts": {
-    "build": "remix build",
+    "postinstall": "remix setup node",
+    "build": "npm run generate:css -- --minify && remix build",
     "dev": "remix dev",
+    "start": "remix-serve build",
     "generate:css": "tailwindcss -o ./app/styles/main.css"
   },
   "dependencies": {
-    "@remix-run/node": "^1.4.3",
-    "@remix-run/react": "^1.4.3",
-    "@remix-run/vercel": "^1.4.3",
+    "@remix-run/node": "*",
+    "@remix-run/react": "*",
+    "@remix-run/serve": "*",
+    "@remix-run/server-runtime": "*",
     "@vercel/node": "^1.14.0",
     "bcryptjs": "^2.4.3",
     "prettier-plugin-tailwindcss": "^0.1.10",
