@@ -110,6 +110,7 @@ export default function App() {
               <li>
                 <Link to="/courses/new">Courses</Link>
               </li>
+              
             </ul>
           </nav>
           <div className="content">
