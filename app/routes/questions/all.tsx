@@ -7,7 +7,12 @@ import {
   MetaFunction,
 } from "@remix-run/node";
 import { prisma } from "~/database";
-
+import defaultStyles from "./../../styles/defaults.css";
+export function links() {
+  return [
+    { rel: "stylesheet", href: defaultStyles },
+  ];
+}
 export const loader: LoaderFunction = async ({ request }) => {
   const cources = await prisma.cource.findMany({
     include: {
@@ -30,12 +35,12 @@ export default function All() {
   console.log(useLoaderData());
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h2>All Questions</h2>
-      <div>
+      <h2 className="marginmiddle">All Questions</h2>
+      <div className="marginmiddlebold">
         {cources.map((cource) => {
           return (
             <div key={cource.id}>
-              <h3>{cource.name}</h3>
+              <h3 className="course">{cource.name}</h3>
 
               <ul>
                 {cource.questions.map((q) => (

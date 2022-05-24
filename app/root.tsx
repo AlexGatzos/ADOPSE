@@ -50,8 +50,8 @@ export default function App() {
       <body>
         <main className="page">
           <nav className="header">
-            <h1>
-              <Link to="/">adopse</Link>
+            <h1 className="banner">
+              <Link to="/">ΑΔΟΠΣΕ</Link>
             </h1>
             {user ? (
               <div>
@@ -65,11 +65,11 @@ export default function App() {
             )}
           </nav>
 
-          <nav className="sidebar">
-            <ul>
+          <nav>
+            <ul className="menu">
               <li>
                 <strong>Questions</strong>
-                <ul>
+                <ul className="ulmargin">
                   <li>
                     <Link to="/questions/all">All questions</Link>
                   </li>
@@ -83,7 +83,7 @@ export default function App() {
               </li>
               <li>
                 <strong>Test</strong>
-                <ul>
+                <ul className="ulmargin">
                   <li>
                     <Link to="/test/all">All tests</Link>
                   </li>
@@ -97,7 +97,7 @@ export default function App() {
               </li>
               <li>
                 <strong>Exam</strong>
-                <ul>
+                <ul className="ulmargin">
                   <li>
                     <Link to="exam/user">My exams</Link>
                   </li>

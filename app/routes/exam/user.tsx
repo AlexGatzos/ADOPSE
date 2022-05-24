@@ -31,12 +31,12 @@ export default function All() {
   console.log(useLoaderData());
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h2>My exams</h2>
-      <div>
+      <h2 className="marginmiddle">My exams</h2>
+      <div className="marginmiddlebold">
         {exams.map((exam) => {
           return (
             <div key={exam.id}>
-              <h3>{exam.test.title}</h3>
+              <h3 className="course">{exam.test.title}</h3>
 
               {exam.score}
             </div>

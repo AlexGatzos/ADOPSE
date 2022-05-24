@@ -49,7 +49,7 @@ export default function New() {
         <input name="name" required />
         <button type="submit">Create New Course</button>
       </Form>
-      <ul>
+      <ul className="course">
         {courses.map((course) => (
           <li>
             {course.id} {course.name}

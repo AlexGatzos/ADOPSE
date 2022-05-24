@@ -30,12 +30,12 @@ export default function All() {
   console.log(useLoaderData());
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h2>All Tests</h2>
-      <div>
+      <h2 className="marginmiddle">All Tests</h2>
+      <div className="marginmiddlebold">
         {tests.map((test) => {
           return (
             <div key={test.id}>
-              <h3>{test.title}</h3>
+              <h3 className="course">{test.title}</h3>
 
               <ul>
                 {test.questions.map((q) => (
